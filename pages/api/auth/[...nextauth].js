@@ -5,6 +5,7 @@ import clientPromise from "@/lib/mongodb";
 
 export const authOptions = {
   providers: [
+    secret: process.env.SECRET,
     GoogleProvider({
       clientId: process.env.GOOGLE_FRONT_ID,
       clientSecret: process.env.GOOGLE_FRONT_SECRET,
