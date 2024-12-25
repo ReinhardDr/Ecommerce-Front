@@ -193,7 +193,7 @@ export default function ProductBox({
         <ProductInfoBox>
           <Title href={url}>{title}</Title>
           <PriceRow>
-            <Price>{price} ₫</Price>
+          <Price>{price.toLocaleString()} ₫</Price>
             <ButtonWithHover
               _id={_id}
               src={images?.[0]}

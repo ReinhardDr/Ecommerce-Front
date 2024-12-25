@@ -17,12 +17,7 @@ import mongoose, {model, Schema, models} from "mongoose";
 const ProductSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String },
-  topic: [
-    {
-      text: { type: String, required: true }, // Văn bản trong topic
-      image: { type: String }, // URL ảnh trong topic (nếu có)
-    },
-  ],
+  topic: { type: String, required: true },
   price: { type: Number, required: true },
   images: { type: [String] },
   category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },

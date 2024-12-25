@@ -29,7 +29,7 @@ const ColumnsWrapper = styled.div`
     padding: 15px 0;
   }
   table tbody tr.subtotal td:nth-child(2) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   tr.total td {
     font-weight: bold;
@@ -44,6 +44,13 @@ const Box = styled.div`
 
 const ProductInfoCell = styled.td`
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+  font-size: 0.85rem; /* Giảm kích thước chữ */
+
   button {
     padding: 0 !important;
   }
@@ -51,7 +58,7 @@ const ProductInfoCell = styled.td`
 
 const ProductImageBox = styled.div`
   width: 70px;
-  height: 100px;
+  height: 70px;
   padding: 2px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
@@ -59,8 +66,8 @@ const ProductImageBox = styled.div`
   justify-content: center;
   border-radius: 10px;
   img {
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 50px;
+    max-height: 50px;
   }
   @media screen and (min-width: 768px) {
     padding: 10px;
@@ -75,6 +82,7 @@ const ProductImageBox = styled.div`
 
 const QuantityLabel = styled.span`
   padding: 0 15px;
+  font-size: 0.8rem; /* Giảm kích thước chữ */
   display: block;
   @media screen and (min-width: 768px) {
     display: inline-block;
@@ -226,8 +234,6 @@ export default function CartPage() {
                       <th>Giá</th>
                     </tr>
                   </thead>
-
-                  
                   <tbody>
                     {products.map(product => (
                       <tr key={product._id}>
@@ -235,7 +241,7 @@ export default function CartPage() {
                           <ProductImageBox>
                             <img src={product.images[0]} alt="" />
                           </ProductImageBox>
-                          {product.title}
+                          <span>{product.title}</span>
                         </ProductInfoCell>
                         <td>
                           <Button onClick={() => lessOfThisProduct(product._id)}>-</Button>
@@ -245,21 +251,21 @@ export default function CartPage() {
                           <Button onClick={() => moreOfThisProduct(product._id)}>+</Button>
                         </td>
                         <td>
-                          {cartProducts.filter(id => id === product._id).length * product.price} ₫
+                          {(cartProducts.filter(id => id === product._id).length * product.price).toLocaleString()} ₫
                         </td>
                       </tr>
                     ))}
                     <tr className="subtotal">
                       <td colSpan={2}>Sản Phẩm</td>
-                      <td>{productsTotal} ₫</td>
+                      <td>{productsTotal.toLocaleString()} ₫</td>
                     </tr>
                     <tr className="subtotal">
                       <td colSpan={2}>Phí Ship</td>
-                      <td>{shippingFee} ₫</td>
+                      <td>{shippingFee?.toLocaleString() || 0} ₫</td>
                     </tr>
                     <tr className="subtotal total">
                       <td colSpan={2}>Tổng</td>
-                      <td>{productsTotal + parseInt(shippingFee || 0)} ₫</td>
+                      <td>{(productsTotal + parseInt(shippingFee || 0)).toLocaleString()} ₫</td>
                     </tr>
                   </tbody>
                 </Table>

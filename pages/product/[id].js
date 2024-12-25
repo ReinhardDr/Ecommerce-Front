@@ -70,7 +70,8 @@ export default function ProductPage({ product }) {
               </table>
             </DescriptionBox>
             <PriceRow>
-              <Price>{product.price} ₫</Price>
+              {/* <Price>{product.price} ₫</Price> */}
+              <Price>{product.price.toLocaleString()} ₫</Price>
               <FlyingButton main _id={product._id} src={product.images?.[0]}>
                 <CartIcon /> Thêm Vào Giỏ Hàng
               </FlyingButton>
