@@ -7,6 +7,8 @@ import { Setting } from "@/models/Setting";
 const stripe = require("stripe")(process.env.STRIPE_SK);
 import nodemailer from "nodemailer";
 
+
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 const formatCurrency = (amount) => {
   return new Intl.NumberFormat('vi-VN', { 
     style: 'currency', 

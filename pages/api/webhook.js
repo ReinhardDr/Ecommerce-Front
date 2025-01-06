@@ -4,7 +4,7 @@ import { mongooseConnect } from "@/lib/mongoose";
 import { Order } from "@/models/Order";
 import { buffer } from "micro";
 
-const endpointSecret = "whsec_ad29ea753523f2e4efb3c2e98158202c3e5edc81d631840213d283b9d252e6d4";
+const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
