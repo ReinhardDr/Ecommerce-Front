@@ -2,13 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/product/[id]": "pages/product/[id].js",
+  "/": "pages/index.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/api/wishlist": "pages/api/wishlist.js",
-  "/cart": "pages/cart.js",
-  "/api/address": "pages/api/address.js",
-  "/api/orders": "pages/api/orders.js",
-  "/account": "pages/account.js",
-  "/api/cart": "pages/api/cart.js",
-  "/api/checkout": "pages/api/checkout.js",
-  "/api/settings": "pages/api/settings.js"
+  "/api/reviews": "pages/api/reviews.js",
+  "/api/wishlist": "pages/api/wishlist.js"
 }
