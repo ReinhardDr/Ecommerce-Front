@@ -9,7 +9,6 @@ import {getServerSession} from "next-auth";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
 import {WishedProduct} from "@/models/WishedProduct";
 import Footer from "@/components/FooterBox";
-
 export default function ProductsPage({products,wishedProducts}) {
   return (
     <>
