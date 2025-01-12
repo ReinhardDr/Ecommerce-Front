@@ -17,6 +17,7 @@ export default function HomePage({ featuredProduct, newProducts, wishedNewProduc
       <Head>
         <title>ManhEcommerce</title>
         <meta name="description" content="WEBSITE bán lẻ trực tuyến, chuyên gia dụng đảm bảo không đắt cực rẻ và chất lượng." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Script
         src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"
