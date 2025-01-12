@@ -8,19 +8,21 @@ import {getServerSession} from "next-auth";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
 import {Setting} from "@/models/Setting";
 import Footer from "@/components/FooterBox";
-import FacebookMSG from "@/components/FacebookMSG";
-
-
-
+import Head from 'next/head';
+import { reportWebVitals } from 'next/web-vitals';
 
 export default function HomePage({featuredProduct,newProducts,wishedNewProducts}) {
   return (
     <div>
+      <Head>
+      <title>ManhEcommerce</title>
+      <meta name="description" content="WEBSITE bán lẻ trực tuyến ,chuyên gia dụng đảm bảo không đắt cực rẻ và chất lượng." />
       <Header />
       <Featured product={featuredProduct} />
       <NewProducts products={newProducts} wishedProducts={wishedNewProducts} />
-      <FacebookMSG />
+      <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
       <Footer />
+      </Head>
     </div>
   );
 }
@@ -45,4 +47,7 @@ export async function getServerSideProps(ctx) {
       wishedNewProducts: wishedNewProducts.map(i => i.product.toString()),
     },
   };
+}
+export function reportWebVitals(metric) {
+  console.log(metric);
 }
