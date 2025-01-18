@@ -68,6 +68,7 @@ export default function Footer() {
             <RevealWrapper origin={"left"} delay={0}>
               <Title>Về Chúng Tôi</Title>
               <LinksList>
+                <li><a href={'https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>Nhấn vào đây :-) </a></li>
                 <li><a href={'/introindex'}>Giới thiệu về website</a></li>
                 <li><a href="https://developers.google.com/identity/protocols/oauth2/policies">Chính sách bảo mật</a></li>
                 <li><a href="https://next-auth.js.org/faq">Điều khoản & Điều kiện</a></li>
