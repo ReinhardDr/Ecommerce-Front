@@ -16,7 +16,7 @@ export default function HomePage({ featuredProduct, newProducts, wishedNewProduc
     <div>
       <Head>
         <title>AnhManhGiaDung</title>
-        <meta name="description" content="WEBSITE bán lẻ trực tuyến, chuyên gia dụng đảm bảo không đắt cực rẻ và chất lượng." />
+        <meta name="description" content="WEBSITE bán lẻ trực tuyến, chuyên gia dụng đảm bảo không đắt cực rẻ và chất lượng.Một đêm duy nhất chỉ có hôm nay , Hôm Nay .WEBSITE TẠO RA DỂ CUNG CẤP CHO NGƯỜI DÙNG TEST" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Script
